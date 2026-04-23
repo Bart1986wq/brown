@@ -1,0 +1,22 @@
+{
+  "entities": {
+    "ProseProject": {
+      "title": "ProseProject",
+      "description": "Persistence state for Prose Builder project",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "proseMode": { "type": "string" },
+        "proseLength": { "type": "string" },
+        "scaffoldText": { "type": "string" }
+      },
+      "required": ["userId"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/proseProjects/{projectId}": {
+      "schema": { "$ref": "ProseProject" },
+      "description": "User's prose builder projects"
+    }
+  }
+}
